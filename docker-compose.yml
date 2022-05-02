@@ -1,0 +1,27 @@
+---
+version: "3"
+services:
+  php-apache:
+    container_name: php-apache
+    image: php:8.1-apache
+    volumes:
+      - ./src/localhost/www:/var/www/html
+    ports:
+      - "8080:80"
+    restart: always
+  #mariadb:
+    #container_name: mariadb
+    #image: mariadb
+    #ports:
+      #- "8081:3306"
+    #environment:
+      #- MARIADB_ROOT_PASSWORD=1
+    #restart: always
+  #phpmyadmin:
+    #container_name: phpmyadmin
+    #image: phpmyadmin
+    #ports:
+      #- "8082:80"
+    #environment:
+      #- PMA_ARBITRARY=1
+    #restart: always
